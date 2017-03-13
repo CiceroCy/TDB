@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+	<!-- FORM AUTHENTICATION -->
+	<http auto-config="true" create-session="ifRequired" use-expressions="true" authentication-manager-ref="authenticationManager"  >
+		
+		<!-- Login -->
+		<intercept-url pattern="/auth/login" access="permitAll"/>
+		<intercept-url pattern="/auth/loginfailed" access="permitAll"/>
+		<intercept-url pattern="/auth/loginlocked" access="permitAll"/>
+		<intercept-url pattern="/auth/reset" access="permitAll"/>
+		<intercept-url pattern="/auth/verifica-user" access="permitAll"/>
+		
+		<!-- Resources -->
+		<intercept-url pattern="/**/*.css" access="permitAll" />
+	    <intercept-url pattern="/**/*.js" access="permitAll" />
+	    <intercept-url pattern="/**/*.png" access="permitAll" />
+	    <intercept-url pattern="/**/*.jpg" access="permitAll" />
+	    <intercept-url pattern="/**/*.gif" access="permitAll" /> 
+				
+		<!-- USER REGISTRY -->
+		<intercept-url pattern="/**/userList" access="hasRole('ROLE_ADM')"/> 
+		<intercept-url pattern="/**/save-user.htm" access="hasRole('ROLE_ADM')"/>
+		<intercept-url pattern="/**/search-user.htm" access="hasRole('ROLE_ADM')"/>
+		<intercept-url pattern="/**/edit-user.htm**" access="hasRole('ROLE_ADM')"/>
+
+		<!-- All URLs -->
+		<intercept-url pattern="/**" access="isAuthenticated()" />
+
+		<form-login login-page="/auth/login"  authentication-failure-handler-ref="customAuthenticationFailureHandler"/>
+		<logout invalidate-session="true" logout-url="/logout" delete-cookies="JSESSIONID" logout-success-url="/auth/login"/>
+
+		<!-- Access Denied -->
+		<access-denied-handler error-page="/page/init-acess-denied.htm"/>
+
+	</http>
+
+	<beans:bean id="customAuthenticationFailureHandler"  class="com.nttdata.tdb.web.core.auth.CustomAuthenticationFailureHandler" />
+
+	 <beans:bean id="customDaoAuthenticationProvider"  class="com.nttdata.tdb.web.core.auth.CustomDaoAuthenticationProvider">
+	   <beans:property name="userDetailsService" ref="userDetailsService" />
+	   	<beans:property name="passwordEncoder">
+        	<beans:bean class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
+    	</beans:property>
+	 </beans:bean>
+
+	 <!-- Classe que controla a autenticação -->
+	 <beans:bean id="authenticationManager" class="org.springframework.security.authentication.ProviderManager">
+			<beans:property name="providers">
+				<beans:list>
+					<beans:ref bean="customDaoAuthenticationProvider" />
+				</beans:list>
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean id="userDetailsService" class="com.nttdata.tdb.web.core.auth.UserDetailsServiceImpl"/>
+
+</beans:beans>

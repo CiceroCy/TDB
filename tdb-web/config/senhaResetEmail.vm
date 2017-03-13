@@ -1,0 +1,9 @@
+<html>
+<body>
+<br>
+<p>Prezado (a),</p>
+Sua senha de login TDB foi resetada, por favor troque sua senha após o primeiro acesso:<br><br>
+senha:<strong>${senha}</strong><br><br><br>
+<h2>TDB-Tim DashBoard</h2><br><br>
+</body>
+</html>

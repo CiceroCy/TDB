@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/views/template">
+    <decorator name="page" page="default.jsp">
+        <pattern>*page*</pattern>
+    </decorator>
+    <decorator name="plain" page="plain.jsp">
+        <pattern>*plain*</pattern>
+    </decorator>
+    <decorator name="auth" page="authTemplate.jsp">
+        <pattern>*auth*</pattern>
+    </decorator>
+</decorators>

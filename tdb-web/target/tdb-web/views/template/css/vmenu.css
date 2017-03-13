@@ -1,0 +1,28 @@
+ul#vmenu {
+	width: 200px;
+	background: #DCDCDC;
+	margin: 15px;
+	padding: 0;
+	list-style-type: none;
+}
+
+ul#vmenu li {
+	border-bottom: 1px solid #5C8098;
+}
+
+ul#vmenu li a:link,ul#vmenu li a:visited {
+	display: block;
+	height: 1%;
+	text-decoration: none;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: black;
+	border-left: 10px solid #6599FF;
+	padding-left: 5px;
+}
+
+ul#vmenu li a:hover {
+	background-color: #E0F2F7;
+	color: #0B3861;
+	border-left: 10px solid #0B3861;
+}

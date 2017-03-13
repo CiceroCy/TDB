@@ -1,0 +1,16 @@
+com\nttdata\tdb\web\core\auth\UserDetailsServiceImpl.class
+com\nttdata\tdb\web\core\auth\CustomUser.class
+com\nttdata\tdb\web\core\command\AuthUserCommand.class
+com\nttdata\tdb\web\core\controller\DashboardController.class
+com\nttdata\tdb\web\core\controller\TdbCoreController.class
+com\nttdata\tdb\web\core\auth\CustomDaoAuthenticationProvider.class
+com\nttdata\tdb\web\core\command\MessagesResult.class
+com\nttdata\tdb\web\core\log\TdbSecurityLogAspect.class
+com\nttdata\tdb\web\core\auth\CustomUser$AuthorityComparator.class
+com\nttdata\tdb\web\core\auth\CustomAuthenticationFailureHandler.class
+com\nttdata\tdb\web\core\command\TdbCoreCommand.class
+com\nttdata\tdb\web\core\controller\Tester.class
+com\nttdata\tdb\web\core\auth\CustomUser$1.class
+com\nttdata\tdb\web\core\auth\ErrorAcessDeniedController.class
+com\nttdata\tdb\web\email\controller\EmailResetpassWordController.class
+com\nttdata\tdb\web\registry\controller\UserController.class

@@ -1,0 +1,153 @@
+/* HEADER */
+
+
+/* LOGO */
+.everis_ntt{
+	background-image: url('../img/everis_logo.png');
+	width: 30%;
+	height: 85px;
+	margin-left: 1%;
+	background-repeat: no-repeat;
+	float: left;
+	
+}
+
+.grafico_horizontal{
+	background-image: url('../img/grafico_horizontal.png');
+	width: 265px;
+	height: 327px;
+	margin-left: 1%;
+	background-repeat: no-repeat;
+	float: left;
+	
+}
+
+.grafico_vertical{
+	background-image: url('../img/grafico_vertical.png');
+	width: 979px;
+	height: 327px;
+	margin-left: 2%;
+	background-repeat: no-repeat;
+	float: left;
+}
+
+.grafico_relatorio{
+	background-image: url('../img/relatorios.png');
+	width: 400px;
+	height: 327px;
+	margin-left: 2%;
+	background-repeat: no-repeat;
+	float: left;
+}
+.table_rel{
+	margin-top: 1%;
+	width: 500px;
+	height: initial;
+	margin-left: 2%;
+	float: left;
+	
+}
+
+.title_header {
+	width: 40%;
+	font-size: 36px;
+	color: #808080;
+	position: relative;
+	top: 30px;
+	float: left;
+	margin-left:10%;
+	font-family: 'Arial Bold';
+}
+}
+.clear {
+	clear: both;
+}
+.margin {
+	margin: 10px !important;
+}
+
+.large-size{
+	width: 100%;
+}
+
+.input-size{
+	width: 90%;
+}
+
+.text-size{
+	width: 97%;
+}
+
+.back-white{
+	background-color: white;
+}
+
+.margin-table{
+	margin-top: 10px;
+}
+
+/* LOGIN */
+.margin-login{
+	margin-top: 27px;
+}
+
+.margin-btn-login{
+	margin-top: 0px;
+}
+
+.color-login{
+	color: white;
+}
+
+/*MARGIN*/
+.margin-sub{
+	margin-left: 5% !important;
+}
+
+.margin-legend{
+	margin-left: 1% !important;
+}
+
+.validation{
+	color: #D8000C;
+	border: 2px solid;
+	background-color: white
+}
+
+.requiredField {
+	color: red;
+}
+
+.order{
+	cursor:pointer;
+	margin-top: 1%;
+}
+
+.checkbox-table{
+	 background-color: white;
+	 border-style:solid;
+	 border-width:1px;
+	 border-color: #DCE4EC
+}
+
+.logError{
+	margin-left: 1% !important;
+	width: 90%;
+	overflow-y:auto;
+	max-height:50px;
+}
+.table-scroll{
+   width:100% !important;
+   overflow: auto !important;
+}
+
+.footer{
+  position:relative;
+  bottom:0 !important;
+  width:100%;
+}
+
+.radio-inline{
+	float:left;
+	margin-left: 3%;
+}

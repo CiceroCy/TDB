@@ -1,0 +1,13 @@
+.loading_bar_body {
+  height: 100%;
+  width: 100%;
+  top:0;
+  left:0;
+  z-index : 999999;
+  background: url(../images/ajax-loader-2.gif) no-repeat 50% 50%;
+  hasBackground: true;
+  backgroundColor: "#ffffff";/*#34383e*/
+  backgroundOpacity: "0.6";
+  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+}
