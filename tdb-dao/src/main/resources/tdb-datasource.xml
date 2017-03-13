@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+                http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                http://www.springframework.org/schema/data/mongo
+	          	http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd
+	          	http://www.springframework.org/schema/util
+	          	http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+	<context:property-placeholder ignore-unresolvable="true" location="classpath:/datasource_${tdb.env}.properties" />
+
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:/TdbDS" />
+	</bean>
+
+	<bean name="namedJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<mongo:mongo id="mongo" host="${mongodb.host}" port="${mongodb.port}" />
+	<mongo:db-factory dbname="${mongodb.base}"  mongo-ref="mongo" />
+
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+		<property name="writeConcern">
+            <util:constant static-field="com.mongodb.WriteConcern.SAFE" ></util:constant>
+        </property>
+	</bean>
+
+</beans>
