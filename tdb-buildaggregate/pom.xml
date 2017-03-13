@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.nttdata.tdb</groupId>
+	<artifactId>tdb-buildaggregate</artifactId>
+	<packaging>pom</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<modules>
+		<!-- <module>../tdb-domain</module> -->
+		<!-- <module>../tdb-email-sender</module> -->
+		<!-- <module>../tdb-dms</module> -->
+		<module>../tdb-dao</module>
+		<module>../tdb-services</module>
+		<module>../tdb-web</module>
+		<!-- <module>../tdb-scheduler</module> -->
+	</modules>
+
+</project>
